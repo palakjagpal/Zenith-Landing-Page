@@ -1,0 +1,488 @@
+/* CSS Variables for consistent theming */
+:root {
+    --nude-dark: #5A524D; /* Dark nude for primary accents */
+    --nude-darker: #af866d; /* Even darker nude for hover states/stronger accents */
+    --nude-darkest: #3B3734; /* For text on very light backgrounds or darkest elements */
+    --nude-light: #DDC8BF; /* Light nude for subtle backgrounds like feature icon wrappers */
+    --gray-50: #f9fafb;
+    --gray-500: #6b7280;
+    --gray-600: #4b5563;
+    --gray-700: #374151;
+    --gray-800: #1f2937;
+    --gray-900: #111827;
+    --white: #ffffff;
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+/* Base and Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+    tap-highlight-color: transparent;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    -webkit-tap-highlight-color: transparent;
+    tap-highlight-color: transparent;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: 'Quicksand', sans-serif;
+    background-color: var(--gray-50);
+    color: var(--gray-800);
+    line-height: 1.6;
+    cursor: pointer;
+}
+
+/* Set Comfortaa for headings and logo */
+h1, h2, h3, .logo, .section-title {
+    font-family: 'Comfortaa', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Utility Classes */
+.container {
+    width: 100%;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Header and Navigation */
+.header {
+    background-color: var(--gray-800);
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    color: var(--white);
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--nude-light);
+}
+
+/* Mobile Toggle Button */
+.menu-toggle {
+    color: var(--white);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: block; /* Visible on mobile */
+}
+
+/* Navigation Links - initially hidden on mobile, stacked */
+.nav-links {
+    display: none; /* Hidden by default on mobile */
+    width: 100%; /* Take full width on mobile */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 1rem;
+}
+
+.nav-links.active {
+    display: flex; /* Show when active */
+}
+
+.nav-links a {
+    margin: 0.5rem;
+    color: floralwhite;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--nude-light);
+}
+
+.nav-links .btn {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem; /* Add some space below the button */
+    transition: background-color 0.4s ease, color 0.4s ease, transform 0.2s ease; /* Enhanced transitions */
+    will-change: background-color, color, transform; /* Optimize for animation */
+}
+
+.nav-links .btn:hover{
+    background-color: floralwhite; 
+    color: var(--nude-darker);
+    transform: translateY(-10px); /* Slightly lift the button */
+    box-shadow: var(--shadow-lg); /* Add a larger shadow on hover */
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    color: floralwhite;
+    background-color: var(--nude-darker);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: background-color 0.4s ease, color 0.4s ease, transform 0.2s ease; /* Enhanced transitions */
+    will-change: background-color, color, transform; /* Optimize for animation */
+}
+
+.btn:hover {
+    background-color: floralwhite; /* Slightly darker on hover for a subtle change */
+    color: var(--nude-darker); /* White text on hover */
+    transform: translateY(-10px); /* Slightly lift the button */
+    box-shadow: var(--shadow-lg); /* Add a larger shadow on hover */
+}
+
+.btn-lg {
+    padding: 0.75rem 2rem;
+    font-size: 1.125rem;
+}
+
+/* Specific styling for the header's navigation button to override general .btn hover */
+.nav-links .btn {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    background-color: var(--nude-darker); /* Ensure consistent initial background */
+    color: floralwhite; /* Ensure consistent initial text color */
+}
+
+.nav-links .btn:hover {
+    background-color: floralwhite;
+    color: var(--nude-darker);
+    transform: translateY(0); /* Remove lift for nav button if not desired */
+    box-shadow: none; /* Remove shadow for nav button if not desired */
+}
+/* Hero Section */
+.hero {
+    background-color: var(--nude-light);
+    padding: 5rem 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    line-height: 1.2;
+    max-width: 36rem;
+    margin: 0 auto;
+}
+
+.hero p {
+    margin-top: 1rem;
+    font-size: 1.125rem;
+    color: var(--gray-900);
+    max-width: 42rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero .btn {
+    margin-top: 2rem;
+}
+
+/* Features Section */
+.features, .testimonials {
+    padding: 5rem 0;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    color: var(--gray-900);
+    margin-bottom: 3rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+}
+
+.feature-card {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow-lg);
+    text-align: center;
+}
+
+.feature-icon-wrapper {
+    width: 4rem;
+    height: 4rem;
+    background-color: var(--nude-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem auto;
+}
+
+.feature-icon-wrapper svg {
+    width: 2rem;
+    height: 2rem;
+    color: var(--nude-dark);
+}
+
+.feature-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--gray-900);
+    margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+    color: var(--gray-600);
+}
+
+/* Testimonials Section */
+.testimonials {
+    background-color: var(--nude-light) !important;
+}
+
+.testimonials-flex {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.testimonial-card {
+    background-color: var(--gray-50);
+    padding: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow-lg);
+    flex: 1;
+}
+
+.testimonial-card p:first-child {
+    color: var(--gray-600);
+    margin-bottom: 1.5rem;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+}
+
+.testimonial-author img {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.author-name {
+    font-weight: 600;
+    color: var(--gray-900);
+}
+
+.author-title {
+    font-size: 0.875rem;
+    color: var(--gray-500);
+}
+
+/* Footer */
+.footer {
+    background-color: var(--gray-800);
+    color: var(--white);
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.footer h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.footer p {
+    margin-bottom: 2rem;
+}
+
+.footer-bottom {
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--gray-700);
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    background-color: var(--nude-dark);
+    color: var(--white);
+    border: none;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    box-shadow: var(--shadow-lg);
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: background-color 0.4s ease, color 0.4s ease, transform 0.2s ease; /* Enhanced transitions */
+    will-change: background-color, color, transform; /* Optimize for animation */
+    z-index: 100;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background-color: var(--nude-darker);
+    transform: translateY(-5px); /* Slightly lift the button */
+    box-shadow: var(--shadow-lg); /* Add a larger shadow on hover */
+}
+
+/* Social Media Icons in Footer */
+.social-icons {
+    margin-top: 2rem; /* Space above icons */
+    margin-bottom: 2rem; /* Space below icons */
+    display: flex;
+    justify-content: center; /* Center the icons */
+    gap: 1.5rem; /* Space between icons */
+}
+
+.social-icons a {
+    color: var(--white); /* White icons */
+    font-size: 1.8rem; /* Size of the icons */
+    transition: color 0.3s ease, transform 0.2s ease; /* Smooth transition for hover */
+}
+
+.social-icons a:hover {
+    color: var(--nude-light); /* Lighter nude color on hover */
+    transform: translateY(-3px); /* Slightly lift the icon on hover */
+}
+
+/* About Zenith Section */
+.about-zenith {
+    padding: 5rem 0;
+    background-color: floralwhite; /* Or a slightly different background if desired */
+    text-align: center; /* Center the text for a clean look */
+}
+
+.about-content {
+    max-width: 800px; /* Constrain content width for readability */
+    margin: 0 auto; /* Center the content block */
+    display: flex; /* Use flexbox for image and text layout */
+    flex-direction: column; /* Stack on small screens */
+    align-items: center; /* Center items in the column */
+    gap: 1.5rem; /* Space between paragraphs and image */
+}
+
+.about-content p {
+    font-size: 1.125rem;
+    color: var(--gray-700);
+    line-height: 1.8;
+    text-align: left; /* Align text to the left within its constrained width */
+    transition: color 0.3s ease;
+}
+
+.about-image {
+    width: 100%; /* Make image responsive */
+    max-width: 500px; /* Max width for the image */
+    height: auto;
+    border-radius: 0.75rem; /* Rounded corners for the image */
+    box-shadow: var(--shadow-lg); /* Add a subtle shadow to the image */
+    margin-top: 1.5rem; /* Space above the image */
+}
+
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .header{
+        z-index: 1000;
+    }
+    .about-content {
+        flex-direction: column; /* Side-by-side on larger screens */
+        text-align: left;
+        align-items: flex-start; /* Align items to the start for better text flow */
+    }
+
+    .about-content p {
+        flex: 1; /* Allow paragraphs to take available space */
+        margin-right: 2rem; /* Space between text and image */
+    }
+
+    .about-image {
+        width: 40%; /* Adjust image width for side-by-side layout */
+        max-width: none; /* Remove max-width for flex layout */
+        margin-top: 0; /* Remove top margin when side-by-side */
+    }
+
+    .menu-toggle {
+        display: none; /* Hide toggle button on desktop */
+    }
+
+    .nav-links {
+        display: flex; 
+        width: auto;
+        flex-direction: row;
+        padding-top: 0;
+    }
+
+    .nav-links a {
+        margin: 0 1rem; 
+    }
+
+    .nav-links .btn {
+        margin-top: 0;
+        margin-left: 1rem; 
+    }
+
+    .hero {
+        padding: 8rem 0;
+    }
+    .hero h1 {
+        font-size: 3.75rem;
+    }
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .testimonials-flex {
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 1024px) {
+    .features-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .header{
+        z-index: 1000;
+    }
+}   
