@@ -478,6 +478,113 @@ a {
     }
 }
 
+@media (min-width: 748px){
+    .header{
+        z-index:1000;
+    }
+}
+
+@media (min-width: 720px){
+    .header{
+        z-index:1000;
+    }
+}
+
+@media (min-width: 678px){
+    .header{
+        z-index:1000;
+    }
+}
+
+@media (min-width: 658px){
+    .header{
+        z-index:1000;
+    }
+}
+
+@media (min-width: 628px){
+    .header{
+        z-index:1000;
+    }
+}
+
+@media (min-width: 578px){
+    .header{
+        z-index:1000;
+    }
+}
+
+@media (min-width: 548px){
+    .header{
+        z-index:1000;
+    }
+}
+
+@media (min-width: 520px){
+    .header{
+        z-index:1000;
+    }
+}
+
+@media (min-width: 478px){
+    .header{
+        z-index:1000;
+    }
+}
+
+@media (min-width: 458px){
+    .header{
+        z-index:1000;
+    }
+}
+
+@media (min-width: 420px){
+    .header{
+        z-index:1000;
+    }
+}
+
+@media (min-width: 378px){
+    .header{
+        z-index:1000;
+    }
+}
+
+@media (min-width: 358px){
+    .header{
+        z-index:1000;
+    }
+}
+
+@media (min-width: 320px){
+    .header{
+        z-index:1000;
+    }
+}
+
+@media (min-width: 300px){
+    .header{
+        z-index:1000;
+    }
+}
+
+@media (min-width: 278px){
+    .header{
+        z-index:1000;
+    }
+}
+
+@media (min-width: 258px){
+    .header{
+        z-index:1000;
+    }
+}
+
+@media (min-width: 220px){
+    .header{
+        z-index:1000;
+    }
+}
 @media (min-width: 1024px) {
     .features-grid {
         grid-template-columns: repeat(3, 1fr);
@@ -485,4 +592,5 @@ a {
     .header{
         z-index: 1000;
     }
+
 }   
